@@ -13,5 +13,4 @@ def no_c(my_string):
         The new string
     """
 
-    string_copy = [c for c in my_string if c not in ['c', 'C']]
-    return ("".join(string_copy))
+    return ("".join([c for c in my_string if c not in ['c', 'C']]))
