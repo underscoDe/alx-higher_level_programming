@@ -17,8 +17,9 @@ def print_reversed_list_integer(my_list=[]):
         if idx out of range (> len(my_list))
     """
 
-    reversed_list = my_list
-    reversed_list.reverse()
+    if isinstance(my_list):
+        reversed_list = my_list
+        reversed_list.reverse()
 
-    for element in reversed_list:
-        print("{:d}".format(element))
+        for element in reversed_list:
+            print("{:d}".format(element))
