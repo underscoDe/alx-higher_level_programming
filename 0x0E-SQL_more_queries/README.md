@@ -2,11 +2,11 @@
 ========================
 
 -   By Guillaume
--   Weight: 1
--   Project over - took place from 02-02-2022 to 02-03-2022 - you're done with 0% of tasks.
--   QA review fully automated.
 
 ![](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/66988091.jpg)
+<p align="left">
+  <img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/66988091.jpg" alt="">
+</p>
 
 Resources
 ---------
