@@ -1,18 +1,13 @@
 #!/usr/bin/python3
-# Lists all states from the database hbtn_0e_0_usa.
-# Usage: ./0-select_states.py <mysql username> \
-#                             <mysql password> \
-#                             <database name>
-if __name__ == "__main__":
-    import MySQLdb
-    from sys import argv
+""" Lists all states from the database hbtn_0e_0_usa.
+Usage: ./0-select_states.py <mysql username> \
+                            <mysql password> \
+                            <database name>"""
+import sys
+import MySQLdb
 
-    connection = MySQLdb.connect("localhost", argv[1], argv[2], argv[3])
-    cursor = connection.cursor()
-    command = """SELECT * FROM states
-                ORDER BY states.id ASC"""
-    cursor.execute(command)
-    data = cursor.fetchall()
-    for row in data:
-        print(row)
-    connection.close()
+if __name__ == "__main__":
+    db = MySQLdb.connect("localhost", sys.argv[1], sys.argv[2], sys.argv[3])
+    c = db.cursor()
+    c.execute("SELECT * FROM `states` ORDER BY `states.id` ASC")
+    [print(state) for state in c.fetchall()]
