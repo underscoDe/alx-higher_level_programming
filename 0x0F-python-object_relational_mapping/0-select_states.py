@@ -4,11 +4,15 @@
 #                             <mysql password> \
 #                             <database name>
 if __name__ == "__main__":
-    import sys
     import MySQLdb
+    from sys import argv
 
-
-    db = MySQLdb.connect("localhost", sys.argv[1], sys.argv[2], sys.argv[3])
-    c = db.cursor()
-    c.execute("SELECT * FROM `states` ORDER BY `states.id` ASC")
-    [print(state) for state in c.fetchall()]
+    connection = MySQLdb.connect("localhost", argv[1], argv[2], argv[3])
+    cursor = connection.cursor()
+    command = """SELECT * FROM states
+                ORDER BY states.id ASC"""
+    cursor.execute(command)
+    data = cursor.fetchall()
+    for row in data:
+        print(row)
+    connection.close()
